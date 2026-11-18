@@ -1,7 +1,7 @@
 {
   "name": "justmoney",
   "private": true,
-  "version": "3.6.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",

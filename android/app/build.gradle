@@ -7,8 +7,8 @@ android {
         applicationId "app.justmoney"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 9
-        versionName "3.6.0"
+        versionCode 10
+        versionName "0.1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         // Phones are ARM; leaving out the x86 emulator builds of the OCR engine saves ~23 MB.
         // Remove this filter to run on an x86 Android emulator.
@@ -19,10 +19,24 @@ android {
             ignoreAssetsPattern = '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
         }
     }
+    signingConfigs {
+        release {
+            // Set by the release workflow (or by hand). Without JM_KEYSTORE_PATH the release build is left unsigned.
+            if (System.getenv("JM_KEYSTORE_PATH")) {
+                storeFile file(System.getenv("JM_KEYSTORE_PATH"))
+                storePassword System.getenv("JM_KEYSTORE_PASSWORD")
+                keyAlias System.getenv("JM_KEY_ALIAS")
+                keyPassword System.getenv("JM_KEY_PASSWORD")
+            }
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            if (System.getenv("JM_KEYSTORE_PATH")) {
+                signingConfig signingConfigs.release
+            }
         }
     }
 }
