@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="shortcut_voice">Add by voice</string>
+    <string name="shortcut_voice_long">Say an expense to add it</string>
+    <string name="shortcut_scan">Scan receipt</string>
+    <string name="shortcut_scan_long">Read a receipt or payment screenshot</string>
+    <string name="shortcut_add">Add expense</string>
+    <string name="shortcut_add_long">Type an expense</string>
+    <string name="shortcut_split">Split a bill</string>
+    <string name="shortcut_split_long">Open bill splitting</string>
+    <string-array name="feature_voice"><item>add by voice</item><item>voice</item><item>log expense</item></string-array>
+    <string-array name="feature_scan"><item>scan receipt</item><item>scan</item><item>receipt</item></string-array>
+    <string-array name="feature_add"><item>add expense</item><item>new expense</item><item>add transaction</item></string-array>
+    <string name="widget_description">Spending today and money left this month, with quick add.</string>
+    <string name="widget_balance_description">Your bank balance, account by account.</string>
+    <string name="widget_recent_description">Your latest transactions at a glance.</string>
+    <string name="widget_quick_description">One tap to add, speak, scan or split.</string>
+    <string name="widget_ring_description">Budget used this month as a ring, with what is left per day.</string>
+    <string name="widget_goal_description">Your closest savings goal as a ring.</string>
+    <string name="widget_categories_description">Where this month\'s money went, top three categories.</string>
+    <string name="widget_bills_description">Bills, EMIs and subscriptions due soon.</string>
+    <string name="widget_week_description">Spending on each of the last seven days.</string>
+    <string name="widget_mini_description">One round button to add an expense.</string>
+</resources>

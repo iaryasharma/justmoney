@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/widget_root" android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/widget_bg" android:orientation="vertical" android:padding="16dp">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+        <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Recent" android:textColor="#99FFFFFF" android:textSize="13sp" android:textStyle="bold" />
+        <ImageView android:id="@+id/rec_add" android:layout_width="32dp" android:layout_height="32dp" android:padding="8dp"
+            android:background="@drawable/widget_btn_add" android:src="@drawable/ic_w_plus" android:contentDescription="Add expense" />
+    </LinearLayout>
+    <TextView android:id="@+id/rec_empty" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="Open JustMoney" android:textColor="#80FFFFFF" android:textSize="12sp" android:visibility="gone" />
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+        <LinearLayout android:id="@+id/rec_row1" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginTop="8dp" android:visibility="gone">
+            <FrameLayout android:layout_width="28dp" android:layout_height="28dp">
+                <ImageView android:id="@+id/rec_icon1" android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/widget_amount_deducted" android:contentDescription="@null" />
+                <ImageView android:id="@+id/rec_badge1" android:layout_width="16dp" android:layout_height="16dp" android:layout_gravity="bottom|end"
+                    android:background="@drawable/widget_badge_ring" android:padding="1.5dp" android:scaleType="fitCenter" android:src="@drawable/widget_amount_deducted" android:visibility="gone" android:contentDescription="@null" />
+            </FrameLayout>
+            <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:layout_marginStart="10dp" android:orientation="vertical">
+                <TextView android:id="@+id/rec_name1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#FFFFFF" android:textSize="13sp" android:maxLines="1" android:ellipsize="end" />
+                <TextView android:id="@+id/rec_meta1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#80FFFFFF" android:textSize="11sp" android:maxLines="1" android:ellipsize="end" />
+            </LinearLayout>
+            <TextView android:id="@+id/rec_amt1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:textColor="#FFFFFF" android:textSize="13sp" android:textStyle="bold" android:maxLines="1" />
+        </LinearLayout>
+        <LinearLayout android:id="@+id/rec_row2" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginTop="8dp" android:visibility="gone">
+            <FrameLayout android:layout_width="28dp" android:layout_height="28dp">
+                <ImageView android:id="@+id/rec_icon2" android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/widget_amount_deducted" android:contentDescription="@null" />
+                <ImageView android:id="@+id/rec_badge2" android:layout_width="16dp" android:layout_height="16dp" android:layout_gravity="bottom|end"
+                    android:background="@drawable/widget_badge_ring" android:padding="1.5dp" android:scaleType="fitCenter" android:src="@drawable/widget_amount_deducted" android:visibility="gone" android:contentDescription="@null" />
+            </FrameLayout>
+            <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:layout_marginStart="10dp" android:orientation="vertical">
+                <TextView android:id="@+id/rec_name2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#FFFFFF" android:textSize="13sp" android:maxLines="1" android:ellipsize="end" />
+                <TextView android:id="@+id/rec_meta2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#80FFFFFF" android:textSize="11sp" android:maxLines="1" android:ellipsize="end" />
+            </LinearLayout>
+            <TextView android:id="@+id/rec_amt2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:textColor="#FFFFFF" android:textSize="13sp" android:textStyle="bold" android:maxLines="1" />
+        </LinearLayout>
+        <LinearLayout android:id="@+id/rec_row3" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginTop="8dp" android:visibility="gone">
+            <FrameLayout android:layout_width="28dp" android:layout_height="28dp">
+                <ImageView android:id="@+id/rec_icon3" android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/widget_amount_deducted" android:contentDescription="@null" />
+                <ImageView android:id="@+id/rec_badge3" android:layout_width="16dp" android:layout_height="16dp" android:layout_gravity="bottom|end"
+                    android:background="@drawable/widget_badge_ring" android:padding="1.5dp" android:scaleType="fitCenter" android:src="@drawable/widget_amount_deducted" android:visibility="gone" android:contentDescription="@null" />
+            </FrameLayout>
+            <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:layout_marginStart="10dp" android:orientation="vertical">
+                <TextView android:id="@+id/rec_name3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#FFFFFF" android:textSize="13sp" android:maxLines="1" android:ellipsize="end" />
+                <TextView android:id="@+id/rec_meta3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#80FFFFFF" android:textSize="11sp" android:maxLines="1" android:ellipsize="end" />
+            </LinearLayout>
+            <TextView android:id="@+id/rec_amt3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:textColor="#FFFFFF" android:textSize="13sp" android:textStyle="bold" android:maxLines="1" />
+        </LinearLayout>
+        <LinearLayout android:id="@+id/rec_row4" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginTop="8dp" android:visibility="gone">
+            <FrameLayout android:layout_width="28dp" android:layout_height="28dp">
+                <ImageView android:id="@+id/rec_icon4" android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/widget_amount_deducted" android:contentDescription="@null" />
+                <ImageView android:id="@+id/rec_badge4" android:layout_width="16dp" android:layout_height="16dp" android:layout_gravity="bottom|end"
+                    android:background="@drawable/widget_badge_ring" android:padding="1.5dp" android:scaleType="fitCenter" android:src="@drawable/widget_amount_deducted" android:visibility="gone" android:contentDescription="@null" />
+            </FrameLayout>
+            <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:layout_marginStart="10dp" android:orientation="vertical">
+                <TextView android:id="@+id/rec_name4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#FFFFFF" android:textSize="13sp" android:maxLines="1" android:ellipsize="end" />
+                <TextView android:id="@+id/rec_meta4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#80FFFFFF" android:textSize="11sp" android:maxLines="1" android:ellipsize="end" />
+            </LinearLayout>
+            <TextView android:id="@+id/rec_amt4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:textColor="#FFFFFF" android:textSize="13sp" android:textStyle="bold" android:maxLines="1" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

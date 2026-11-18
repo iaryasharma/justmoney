@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Long-press the app icon, Google Assistant "open <feature> in JustMoney", and Bixby / Assistant routines. -->
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <capability android:name="actions.intent.OPEN_APP_FEATURE">
+        <intent android:action="android.intent.action.VIEW">
+            <url-template android:value="justmoney://feature{?feature}" />
+            <parameter android:name="feature" android:key="feature" />
+        </intent>
+    </capability>
+
+    <shortcut android:shortcutId="voice" android:enabled="true" android:icon="@drawable/shortcut_voice"
+        android:shortcutShortLabel="@string/shortcut_voice" android:shortcutLongLabel="@string/shortcut_voice_long">
+        <intent android:action="android.intent.action.VIEW" android:data="justmoney://voice"
+            android:targetPackage="app.justmoney" android:targetClass="app.justmoney.MainActivity" />
+        <capability-binding android:key="actions.intent.OPEN_APP_FEATURE">
+            <parameter-binding android:key="feature" android:value="@array/feature_voice" />
+        </capability-binding>
+    </shortcut>
+
+    <shortcut android:shortcutId="scan" android:enabled="true" android:icon="@drawable/shortcut_scan"
+        android:shortcutShortLabel="@string/shortcut_scan" android:shortcutLongLabel="@string/shortcut_scan_long">
+        <intent android:action="android.intent.action.VIEW" android:data="justmoney://scan"
+            android:targetPackage="app.justmoney" android:targetClass="app.justmoney.MainActivity" />
+        <capability-binding android:key="actions.intent.OPEN_APP_FEATURE">
+            <parameter-binding android:key="feature" android:value="@array/feature_scan" />
+        </capability-binding>
+    </shortcut>
+
+    <shortcut android:shortcutId="add" android:enabled="true" android:icon="@drawable/shortcut_add"
+        android:shortcutShortLabel="@string/shortcut_add" android:shortcutLongLabel="@string/shortcut_add_long">
+        <intent android:action="android.intent.action.VIEW" android:data="justmoney://add"
+            android:targetPackage="app.justmoney" android:targetClass="app.justmoney.MainActivity" />
+        <capability-binding android:key="actions.intent.OPEN_APP_FEATURE">
+            <parameter-binding android:key="feature" android:value="@array/feature_add" />
+        </capability-binding>
+    </shortcut>
+
+    <shortcut android:shortcutId="split" android:enabled="true" android:icon="@drawable/shortcut_split"
+        android:shortcutShortLabel="@string/shortcut_split" android:shortcutLongLabel="@string/shortcut_split_long">
+        <intent android:action="android.intent.action.VIEW" android:data="justmoney://split"
+            android:targetPackage="app.justmoney" android:targetClass="app.justmoney.MainActivity" />
+    </shortcut>
+</shortcuts>

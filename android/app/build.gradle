@@ -1,0 +1,65 @@
+apply plugin: 'com.android.application'
+
+android {
+    namespace = "app.justmoney"
+    compileSdk = rootProject.ext.compileSdkVersion
+    defaultConfig {
+        applicationId "app.justmoney"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 9
+        versionName "3.6.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        // Phones are ARM; leaving out the x86 emulator builds of the OCR engine saves ~23 MB.
+        // Remove this filter to run on an x86 Android emulator.
+        ndk { abiFilters "arm64-v8a", "armeabi-v7a" }
+        aaptOptions {
+             // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
+             // Default: https://android.googlesource.com/platform/frameworks/base/+/282e181b58cf72b6ca770dc7ca5f91f135444502/tools/aapt/AaptAssets.cpp#61
+            ignoreAssetsPattern = '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories {
+    flatDir{
+        dirs '../capacitor-cordova-android-plugins/src/main/libs', 'libs'
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
+    implementation "androidx.coordinatorlayout:coordinatorlayout:$androidxCoordinatorLayoutVersion"
+    implementation "androidx.core:core-splashscreen:$coreSplashScreenVersion"
+    implementation project(':capacitor-android')
+    implementation "androidx.work:work-runtime:2.10.1"
+    implementation "androidx.biometric:biometric:1.1.0"
+    // On-device text recognition (bundled model, works offline on every phone)
+    implementation "com.google.mlkit:text-recognition:16.0.1"
+    // reads Hindi/Marathi bills too, and the Indian script area that "₹" belongs to
+    implementation "com.google.mlkit:text-recognition-devanagari:16.0.1"
+    // Gemini Nano via ML Kit Prompt API (used only on phones whose AICore provides it)
+    implementation "com.google.mlkit:genai-prompt:1.0.0-beta5"
+    testImplementation "junit:junit:$junitVersion"
+    androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
+    implementation project(':capacitor-cordova-android-plugins')
+}
+
+apply from: 'capacitor.build.gradle'
+
+try {
+    def servicesJSON = file('google-services.json')
+    if (servicesJSON.text) {
+        apply plugin: 'com.google.gms.google-services'
+    }
+} catch(Exception e) {
+    logger.info("google-services.json not found, google-services plugin not applied. Push Notifications won't work")
+}

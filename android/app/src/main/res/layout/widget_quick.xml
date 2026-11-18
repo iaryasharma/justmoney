@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/widget_root" android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/widget_bg" android:orientation="horizontal" android:padding="8dp">
+    <LinearLayout android:id="@+id/quick_add" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:layout_marginStart="4dp" android:layout_marginEnd="4dp"
+        android:background="@drawable/widget_tile_accent" android:orientation="vertical" android:gravity="center">
+        <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/ic_w_plus" android:contentDescription="@null" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="Add" android:textColor="#FFFFFF" android:textSize="11sp" />
+    </LinearLayout>
+    <LinearLayout android:id="@+id/quick_voice" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:layout_marginStart="4dp" android:layout_marginEnd="4dp"
+        android:background="@drawable/widget_tile" android:orientation="vertical" android:gravity="center">
+        <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/ic_w_mic" android:contentDescription="@null" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="Voice" android:textColor="#FFFFFF" android:textSize="11sp" />
+    </LinearLayout>
+    <LinearLayout android:id="@+id/quick_scan" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:layout_marginStart="4dp" android:layout_marginEnd="4dp"
+        android:background="@drawable/widget_tile" android:orientation="vertical" android:gravity="center">
+        <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/ic_w_scan" android:contentDescription="@null" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="Scan" android:textColor="#FFFFFF" android:textSize="11sp" />
+    </LinearLayout>
+    <LinearLayout android:id="@+id/quick_split" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:layout_marginStart="4dp" android:layout_marginEnd="4dp"
+        android:background="@drawable/widget_tile" android:orientation="vertical" android:gravity="center">
+        <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/ic_w_split" android:contentDescription="@null" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="Split" android:textColor="#FFFFFF" android:textSize="11sp" />
+    </LinearLayout>
+</LinearLayout>

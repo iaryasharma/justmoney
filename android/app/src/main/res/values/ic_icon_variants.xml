@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ic_bg_blue">#040B18</color>
+    <color name="ic_bg_green">#04120B</color>
+    <color name="ic_bg_orange">#170B04</color>
+    <color name="ic_bg_pink">#16040D</color>
+    <color name="ic_bg_teal">#04120F</color>
+    <color name="ic_bg_light">#F3EEFF</color>
+    <color name="ic_bg_crimson">#170406</color>
+    <color name="ic_bg_gold">#151004</color>
+    <color name="ic_bg_mono">#000000</color>
+</resources>

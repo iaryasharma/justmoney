@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/widget_root" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/widget_bg" android:orientation="vertical" android:gravity="center" android:padding="10dp">
+    <FrameLayout android:layout_width="76dp" android:layout_height="76dp">
+        <ImageView android:id="@+id/ring_img" android:layout_width="76dp" android:layout_height="76dp" android:scaleType="fitCenter" android:contentDescription="@null" />
+        <TextView android:id="@+id/ring_pct" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:text="0%" android:textColor="#FFFFFF" android:textSize="19sp" android:textStyle="bold" />
+    </FrameLayout>
+    <TextView android:id="@+id/ring_amt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="Open JustMoney" android:textColor="#FFFFFF" android:textSize="14sp" android:textStyle="bold" android:maxLines="1" />
+    <TextView android:id="@+id/ring_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="of your budget" android:textColor="#B3FFFFFF" android:textSize="10sp" android:maxLines="1" />
+</LinearLayout>

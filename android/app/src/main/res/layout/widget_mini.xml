@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:padding="6dp">
+    <ImageView android:id="@+id/mini_add" android:layout_width="match_parent" android:layout_height="match_parent" android:padding="16dp"
+        android:background="@drawable/widget_btn_add" android:src="@drawable/ic_w_plus" android:contentDescription="Add expense" />
+</FrameLayout>
