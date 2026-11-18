@@ -33,7 +33,7 @@ import { committedCategories, isPersonalSpend } from '../lib/core/money'
 import { DEFAULT_ALERTS, SOUNDS, type AlertPrefs } from '../lib/notify/alerts'
 import type { PlannerPage } from './Planner'
 
-export const APP_VERSION = '0.1.0'
+export const APP_VERSION = '0.1.1'
 type Sub = null | 'backup' | 'backupscope' | 'security' | 'profile' | 'categories' | 'notifications' | 'lock' | 'ai' | 'capture' | 'rules' | 'trash' | 'diag' | 'home' | 'partner' | 'people' | 'presets' | 'shoppay'
 
 export default function Settings({ openPlanner, onWhatsNew }: { openPlanner: (p: PlannerPage) => void; onWhatsNew: () => void }) {

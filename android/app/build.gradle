@@ -7,8 +7,8 @@ android {
         applicationId "app.justmoney"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 10
-        versionName "0.1.0"
+        versionCode 11
+        versionName "0.1.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         // Phones are ARM; leaving out the x86 emulator builds of the OCR engine saves ~23 MB.
         // Remove this filter to run on an x86 Android emulator.
