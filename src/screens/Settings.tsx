@@ -21,6 +21,7 @@ import { AutoCapturePage, RulesPage } from './SettingsExtras'
 import { PeoplePage } from './People'
 import { PresetsPage } from './PlannerMore'
 import ShopPayoutPage from './ShopSettings'
+import UpdatesPage from './Updates'
 import { CURRENCIES, formatPrice, monthRange, monthShort } from '../lib/core/format'
 import { DEFAULT_PREFS, notificationsGranted, requestNotificationPermission } from '../lib/notify/notify'
 import { hashPin, requireAuth, verifyWithBiometric } from '../components/ui/AppLock'
@@ -33,8 +34,8 @@ import { committedCategories, isPersonalSpend } from '../lib/core/money'
 import { DEFAULT_ALERTS, SOUNDS, type AlertPrefs } from '../lib/notify/alerts'
 import type { PlannerPage } from './Planner'
 
-export const APP_VERSION = '0.1.1'
-type Sub = null | 'backup' | 'backupscope' | 'security' | 'profile' | 'categories' | 'notifications' | 'lock' | 'ai' | 'capture' | 'rules' | 'trash' | 'diag' | 'home' | 'partner' | 'people' | 'presets' | 'shoppay'
+export const APP_VERSION = '0.1.2'
+type Sub = null | 'backup' | 'backupscope' | 'security' | 'profile' | 'categories' | 'notifications' | 'lock' | 'ai' | 'capture' | 'rules' | 'trash' | 'diag' | 'home' | 'partner' | 'people' | 'presets' | 'shoppay' | 'updates'
 
 export default function Settings({ openPlanner, onWhatsNew }: { openPlanner: (p: PlannerPage) => void; onWhatsNew: () => void }) {
   const [user] = useStored<User | null>(KEYS.user, null)
@@ -61,6 +62,7 @@ export default function Settings({ openPlanner, onWhatsNew }: { openPlanner: (p:
   if (sub === 'diag') return <DiagnosticsPage onBack={() => setSub(null)} version={APP_VERSION} />
   if (sub === 'home') return <CustomizeHomePage onBack={() => setSub(null)} />
   if (sub === 'shoppay') return <ShopPayoutPage onBack={() => setSub(null)} />
+  if (sub === 'updates') return <UpdatesPage onBack={() => setSub(null)} version={APP_VERSION} />
   if (sub === 'presets') return <PresetsPage onBack={() => setSub(null)} />
   if (sub === 'people') return <PeoplePage onBack={() => setSub(null)} />
   if (sub === 'partner') return <PartnerPage onBack={() => setSub(null)} />
@@ -133,6 +135,11 @@ export default function Settings({ openPlanner, onWhatsNew }: { openPlanner: (p:
       <div className="group-label">AI</div>
       <div className="card">
         <Row icon="sparkles" label={isNativeApp() ? 'AI & assistants' : 'AI processing'} sub={isNativeApp() ? `On-device reader ready${aiConsent && apiKey ? ' · Gemini cloud on' : ''}` : aiConsent && apiKey ? 'On · Google Gemini' : aiConsent ? 'On · add an API key' : 'Off · on-device parsing only'} onClick={() => setSub('ai')} />
+      </div>
+
+      <div className="group-label">App</div>
+      <div className="card">
+        <Row icon="refresh" label="Updates" sub="Check for a newer version and install it" onClick={() => setSub('updates')} />
       </div>
 
       <div className="group-label">Backup</div>
