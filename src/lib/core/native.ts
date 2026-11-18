@@ -92,3 +92,25 @@ interface ContactsPlugin {
 
 /** Read-only phone contacts (ContactsPlugin.java); only the ones you pick are kept in the app. */
 export const Contacts = registerPlugin<ContactsPlugin>('Contacts')
+
+/** Checks GitHub for a newer release and installs it (UpdaterPlugin.java). */
+export interface UpdateInfo {
+  version: string
+  notes: string
+  page: string
+  url: string
+  size: number
+  sha256: string
+  installed: string
+  newer: boolean
+}
+
+export interface UpdaterPlugin {
+  status(): Promise<{ installed: string; daily: boolean }>
+  setDaily(o: { enabled: boolean }): Promise<void>
+  check(): Promise<UpdateInfo>
+  install(o: { url: string; sha256: string; version: string }): Promise<{ opened: boolean; needsPermission: boolean }>
+  addListener(event: 'progress', fn: (e: { received: number; total: number }) => void): Promise<{ remove: () => Promise<void> }>
+}
+
+export const Updater = registerPlugin<UpdaterPlugin>('Updater')

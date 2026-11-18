@@ -65,7 +65,7 @@ JustMoney is an open-source expense tracker for Android, made for India. It read
 ## Privacy and security
 
 - **No server.** JustMoney has no backend, no account system and no analytics. Your transactions, accounts and messages stay on the device.
-- **Few network requests:** live share prices and exchange rates, and, if you turn it on, AI requests to Google Gemini with your own key. Links you open yourself, such as a WhatsApp share, are opened by your browser or app.
+- **Few network requests:** live share prices and exchange rates, the update check against GitHub (once a day, and can be turned off), and, if you turn it on, AI requests to Google Gemini with your own key. Links you open yourself, such as a WhatsApp share, are opened by your browser or app.
 - **Encrypted storage.** The database values are encrypted with AES-256-GCM. The data key is wrapped by a key that stays in the Android Keystore.
 - **Encrypted backups.** Backups are protected with a password you choose (PBKDF2-SHA256 and AES-256-GCM). Secrets such as the App Lock hash and API keys are never included in a backup.
 - **Narrow message reading.** Only messages from business-style senders that look like a payment are kept. Other messages are ignored and never stored. Message text is not written to logs.
@@ -75,6 +75,8 @@ JustMoney is an open-source expense tracker for Android, made for India. It read
 Found a security problem? Please read [SECURITY.md](SECURITY.md) and report it privately.
 
 ## Install
+
+Once installed, JustMoney checks GitHub for a newer release once a day (Settings → Updates). It sends a notification when one is out, and you install it from Settings → Updates.
 
 1. Open the **Releases** page of this repository and download the latest `JustMoney-<version>.apk`.
 2. Open the file on your phone. Android will ask you to allow installation from this source. Allow it for the browser or file manager you used.
@@ -99,6 +101,7 @@ JustMoney asks for permissions only for the features that need them. The Android
 | Run at startup | scheduling reminders and backups again after a restart |
 | Foreground service | the quick-add service |
 | Vibrate | haptic feedback |
+| Install apps | installing a newer JustMoney from Settings → Updates, after you confirm it |
 | Storage (Android 9 and older only) | saving backups and reports where Android 9 and older require it |
 
 ## Development

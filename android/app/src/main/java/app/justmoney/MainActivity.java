@@ -11,9 +11,11 @@ public class MainActivity extends BridgeActivity {
         registerPlugin(DevicePlugin.class);
         registerPlugin(CapturePlugin.class);
         registerPlugin(ContactsPlugin.class);
+        registerPlugin(UpdaterPlugin.class);
         super.onCreate(savedInstanceState);
         // Keep the daily background backup scheduled (no-op if already scheduled or turned off).
         BackupWorker.schedule(this, BackupWriter.isEnabled(this));
+        UpdateWorker.schedule(this, UpdaterPlugin.prefs(this).getBoolean("daily", true));
         PayoutWorker.schedule(this);
     }
 

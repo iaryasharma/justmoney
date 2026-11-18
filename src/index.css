@@ -748,3 +748,11 @@ body.cur-morph .num, body.cur-morph .home-amount, body.cur-morph .big-amount { a
 .sc-none { width: 6px; height: 2px; border-radius: 1px; background: currentColor; opacity: .18; }
 /* a section label with an action at its end: line the two up on the text, not on the label's top margin */
 .row.between:has(> .section-label) { align-items: baseline; }
+
+/* app updates: a spinner while checking, and rising / popping results */
+.spin { display: inline-flex; animation: spin 1s linear infinite; }
+.rise { animation: rise .35s ease both; }
+.pop { animation: pop .45s cubic-bezier(.2, .9, .3, 1.3) both; }
+@keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@keyframes pop { from { opacity: 0; transform: scale(.5); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .spin, .rise, .pop { animation: none !important; } }
